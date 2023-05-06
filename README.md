@@ -3,7 +3,7 @@
 Fig 1 shows the logo I have made in Adobe Express for social network
 # Criterion A: Planning
 ## Problem Description
-My client is a student at a local school. After meeting with her (see Appendix A), I discovered that she is interested in exploring new makeup brands and products. She is new to the industry and doesn’t know where to begin or how to know the real quality of the product. Currently, she is exploring her area of interest through various social media apps but the information is too disorganized as it does not guide viewers to each page. Other social networks are not well-established communities concentrated just on makeup and she is not able to learn from people who know more than she does and view their reviews on products. Moreover, she would like to make reviews of the makeup she tries and share her experience with others.
+My client is a student at a local school. After meeting with her (see Appendix A), I discovered that she is interested in exploring new makeup brands and products. She is new to the industry and doesn’t know where to begin or how to know the real quality of the product. Currently, she is exploring her area of interest through various social media apps but the information is too disorganized as it does not guide users to each page. Other social networks are not well-established communities concentrated just on makeup and she is not able to learn from people who know more than she does and view their reviews on products. Moreover, she would like to make reviews of the makeup she tries and share her experience with others.
 
 ## Rationale for Proposed Solution
 ## Design statement
