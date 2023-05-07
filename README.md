@@ -65,7 +65,7 @@ This ‘post_review’ function allows the user who is logged in to make a post 
 ![unit4wireframe_diagram (1)](https://user-images.githubusercontent.com/111895127/236603515-cd3ae0de-7d4a-4526-a44a-8713f5bf001d.png)
 Fig x shows the wireframe diagram for the Hellacute network
 
-This wireframe diagram's objective is to provide a visual representation of the user interface design that outlines the application's structure and layout. The wireframe also shows how various screens will be accessed via various buttons. The user can see which screen will open when they press and release the button according to the arrows that extend from the button to the screen.
+This wireframe diagram's objective is to provide a visual representation of the user interface design that outlines the structure and layout of the social network. The wireframe also shows how various screens will be accessed via various buttons. The user can see which screen will open when they press and release the button according to the arrows that extend from the button to the screen.
 
 ## ER diagram
 ![unit4_erdiagram](https://user-images.githubusercontent.com/111895127/236603554-a630ea69-0334-4f8d-bfdf-9f51f76515b2.png)
