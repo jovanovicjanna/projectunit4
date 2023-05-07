@@ -41,12 +41,52 @@ I will design and make a social network for a client who is a student at a local
 6. The social network includes a top navigation bar that is visible on pages so it guides users to each page. *[issue tackled = Currently, she is exploring her area of interest through various social media apps but the information is too disorganized as it does not guide viewers to each page]*
 # Criterion B: Design Overview
 ## System diagram
-![unit4_systemdiagram](https://user-images.githubusercontent.com/111895127/236603396-7c093ddb-7810-4e21-ac12-db7bbcad8917.png)
+![unit4_systemdiagram](https://user-images.githubusercontent.com/111895127/236698521-34aaf592-8bc2-463d-95a5-9c256b90652c.png)
+
+Fig x shows the system diagram for the Hellacute network which is a visual representation of the system, its parts, and how they relate to one another. 
+
+## Flow diagrams for algorithms
+![Blank diagram (1)](https://user-images.githubusercontent.com/111895127/236694225-fbee2249-5671-4c24-8fb2-128448e815b3.png)
+Fig x shows the flow diagram for the login function
+
+This ‘login’ function takes email and password as user input. The function checks if the user already exists in the database and if the password is correct, and if both statements are true it creates a cookie with the user's ID and redirects them to the ‘post’ page. If user input is not in the database or the password is incorrect, the function displays an error message and renders the ‘login’ page.
+
+![likesflowchart](https://user-images.githubusercontent.com/111895127/236696274-aa0d1ecc-08c3-43fb-a7bd-9c2df114ae65.png)
+Fig x shows the flow diagram for the like_post function
+
+This ‘like_post’ function allows users to like or unlike posts. It checks whether has user already liked the post and accordingly adds or removes likes. It updates the likes count in the posts table in the database and redirects the user to the ‘allposts’ page.
+
+![postreviewflowchart](https://user-images.githubusercontent.com/111895127/236698406-f8310ed7-0fb0-4ebd-a724-e8c58b30eb2b.png)
+Fig x shows the flow diagram for the post_review function
+
+This ‘post_review’ function allows the user who is logged in to make a post by entering properties such as title, rating, and content. The user must fill out all the fields or else an error message will be displayed. Posts will be displayed in reverse chronological order (the newest one being at the top of the page).
 
 ## Wireframe diagram
 ![unit4wireframe_diagram (1)](https://user-images.githubusercontent.com/111895127/236603515-cd3ae0de-7d4a-4526-a44a-8713f5bf001d.png)
+Fig x shows the wireframe diagram for the Hellacute network
+
+This wireframe diagram's objective is to provide a visual representation of the user interface design that outlines the application's structure and layout. The wireframe also shows how various screens will be accessed via various buttons. The user can see which screen will open when they press and release the button according to the arrows that extend from the button to the screen.
+
 ## ER diagram
 ![unit4_erdiagram](https://user-images.githubusercontent.com/111895127/236603554-a630ea69-0334-4f8d-bfdf-9f51f76515b2.png)
+Fig x shows the ER diagram for the database that the client requires
+
+This is the ER diagram for the database illustrating the relationship between the “users”, “posts” and “likes” table from the “social_net” database. In the “users” table, there are 5 different columns including id, username email, password, and bio. Each column will have the specific data type after the column name. The second table “posts” has 7 columns which are id, title, rate, content, likes, created_at, and user_id. The third table “likes” has 3 columns id, post_id, and user_id. This diagram also shows that one user can have multiple posts which can have multiple likes.
+
+## Example of the database
+
+![Screen Shot 2023-05-08 at 5 30 23](https://user-images.githubusercontent.com/111895127/236701264-76e3a714-f29c-4beb-9468-19b1762b59f7.png)
+
+Fig x shows the example of the data stored in the "users" table in the "social_net" database
+
+![Screen Shot 2023-05-08 at 5 35 50](https://user-images.githubusercontent.com/111895127/236701422-8ce56a55-12b1-43ff-923f-7b26f0ae07a1.png)
+
+Fig x shows the example of the data stored in the "posts" table in the "social_net" database
+
+![Screen Shot 2023-05-08 at 5 36 52](https://user-images.githubusercontent.com/111895127/236701458-2a1cab37-05ca-4f88-a9b9-3e841a713254.png)
+
+Fig x shows the example of the data stored in the "likes" table in the "social_net" database
+
 ## Record of Task
 ## Internal Structure (Design)
 ## Test Table
