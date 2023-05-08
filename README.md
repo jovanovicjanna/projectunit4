@@ -30,7 +30,7 @@ SQLite is a compact, file-based relational database, which doesn't need a separa
 HTML and CSS are the foundational languages used in website creation. The structure and content of the website can be created using HTML, and the styling and layout may be changed using CSS. They provide websites with their overall structure and aesthetics together. Additionally, they have been around for decades, which allows me as a developer to find a large number of recourses to help me create a social network.
 
 ## Design statement
-I will design and make a social network for a client who is a student at a local school. The social network will be about sharing reviews of makeup products and is constructed using the software Python. It will take 3 weeks to make and will be evaluated according to the criteria listed below.
+I will design and make a social network for a client who is a student at a local school. The social network will be about sharing reviews of makeup products and is constructed using the software HTML, CSS, and Python. It will take 3 weeks to make and will be evaluated according to the criteria listed below.
 
 ## Criteria for Success
 1. The social network has a login and register system. *[issue tackled=” Other social networks ”]*
@@ -144,7 +144,230 @@ Fig x shows the example of the data stored in the "likes" table in the "social_n
 | Test the visibility of likes                                 | Non functional testing | n/a                                                         | Display of the number of likes                                                                                      | User being able to see the number of likes on their own post                                                                                                                                                         | 5                |
 | Navigation bar                                               | Unit testing           | n/a                                                         | Click on each section title                                                                                         | When click on each section title, goes to the respective page                                                                                                                                                        | 6                |
 # Criterion C
-#Appendix
+## Existing tools
+| Software/development tools | Coding Structure tools | Libraries |
+|----------------------------|------------------------|-----------|
+| PyCharm                    | Encryption             | Flask     |
+| Relational databases       | Functions              | SQLite3   |
+| SQLite                     | If statements          | passlib   |
+| Python                     | For loops              |           |
+| Chrome (testing)           |                        |           |
+
+## List of techniques used
+
+1. Get/Post methods
+2. Functions
+3. If statements
+4. For loops
+5. Interacting with databases
+6. Lists
+7. Password hashing
+8. Cookies
+
+### Success criteria 1: The social network has a login and register system.
+```.py
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error_message = None
+    if request.method == 'POST':
+        email = request.form['email']
+        passwd = request.form['password']
+        if len(email) > 0 and len(passwd) > 0:
+            db = database_worker('social_net.db')
+            user = db.search(f"SELECT id,email,password from users where email='{email}'")
+            existing_user = db.get(f"SELECT * from users where email = '{email}'")
+            if not existing_user:
+                error_message = "User with this email is not registered"
+            elif user:
+                user = user[0]  # search returns a list, so here I select one
+                id, email, hash = user
+                if check_password(hashed=hash, user_password=passwd):
+                    # create cookie with logged-in user
+                    # 1-create the response webpage (redner template)
+                    resp = make_response(redirect('post'))
+                    resp.set_cookie('user_id', f"{id}")
+                    print("password is correct")
+                    return resp
+                else:
+                    error_message = "Password incorrect"
+
+    return render_template('login.html',error_message=error_message)
+```
+
+Here, I developed an algorithm that makes use of If statements to determine whether the user credentials are accurate and connected to any existing users, in response to a request for login and registration system from my client. 
+
+This algorithm is first checking the HTTP request method to determine whether is user visiting the login form (’GET’) or submitting the form (’POST’). 
+
+If the request method is ‘POST’ function will check the user input and validate it. If a user tried to log in without providing any input, an error message will be displayed. The user must be already registered, and the password must match the one stored in the database for the ‘login’ function to work. If a user passes validation of all the inputs the function sets a cookie with the user's ID and redirects the user to a ‘post’ page.
+
+However, the request method is ‘GET’, and the function will return the “login” page to the user.
+
+In this piece of code, I have used abstraction and stored functions for working with database as well as the ones for encrypting and comparing passwords in file my_lib.py, which enabled me to encapsyle repeating patterns and reuse functions whenever I need them. This makes my code more readable and efficient, reducing the number of errors by repeating the same code at multiple places.
+
+### Success criteria 2: The user must be able to input their reviews of a product, rate them, and delete them.
+
+```.py
+@app.route('/post', methods=['GET', 'POST'])
+def post_review():
+    # here you can read the cookie
+    print("hello")
+    error_message = None
+    if request.cookies.get('user_id'):
+        user_id = request.cookies.get('user_id')
+        db = database_worker("social_net.db")
+    if request.method == 'POST':
+        title = request.form['title']
+        rate = request.form['rate']
+        content = request.form['content']
+        if len(title) > 0 and len(content) > 0 and len(rate)>0:
+            new_post = f"""INSERT into posts(title, rate, content, user_id) values
+                ('{title}','{rate}','{content}',{user_id})"""
+            db.run_save(new_post)
+            return redirect(url_for("post_review", user_id=user_id))
+        else:
+            error_message = "You must fill out all fields"
+
+    user, posts = None, None
+    user = db.search(f"SELECT * from users where id={user_id}")
+    if user:
+        posts = db.search(f"SELECT * FROM posts WHERE user_id={user_id} ORDER BY created_at DESC")
+        user = user[0]  # remenber db.search returns a list
+
+    return render_template("profile.html", user_id=user_id, posts=posts, user=user, error_message=error_message)
+```
+
+Here, I developed an algorithm which allows user to post their own reviews with properties including title, rating and content because that was one of the requests from my client, as she wanted to be able to share her own opinions about makeup she tries. 
+
+The code starts by checking if there is a user_id cookie in the request, and if there is forms a connection with the database. If there is no user_id cookie, the code simply returns the profile.html template with no user or posts displayed.
+
+If the request method is ‘POST’ code checks whether the some of the fields in the form are empty, and if so displays an error message. If all the fields are filled out function creates a post in the database with properties previously mentioned.
+
+When forming this code I divided the task of posting a review into smaller steps, such as checking whether the user is logged in, getting the user ID from a cookie, or inserting the review into the database and therefore used decomposition as the part of computational thinking.
+
+
+
+### Success criteria 4: Users must be able to view basic statistics.
+
+This is the code for simple function statistics which allowed me to display number of posts and number of users registered on a separate page. I have made two queries, one counting the number of the users by counting the rows of the ‘users’ table, and another one counting the number of the posts by counting the rows form the ‘posts’ table.
+
+```.py
+
+@app.route('/statistics')
+def statistics():
+    db = database_worker("social_net.db")
+    no_user = db.get(f"SELECT count(*) from users")
+    no_post = db.get(f"SELECT count(*) from posts")
+    return render_template("statistics.html", no_user = no_user[0], no_post=no_post[0])
+```
+
+### Success criteria 5: Users must be able to like reviews posted by other users. 
+
+Adding the like function was the most challenging task for me in the whole project. The hardest part of making that function was to make likes compatible with multiple users, meaning that the first time I have developed the function one user would remove another users like, not adding a new one. I overcome that challenge by adding this line of code which checks whether has user previously liked the post or not by checking the rows in the likes table.
+```.py
+likes_query = f"SELECT * FROM likes WHERE post_id={post_id} AND user_id={user_id}"
+user_like = db.search(likes_query)
+```
+This block of code will remove the like on the post if the user has already liked it by constructing a query which will delete the corresponding row from the ‘likes’ table.
+```.py
+if user_like:
+    # If the user has already liked the post, remove their like
+    delete_like_query = f"DELETE FROM likes WHERE post_id={post_id} AND user_id={user_id}"
+    db.run_save(delete_like_query)
+```
+Accordingly, this block of code will add the like on the post if the user hasn’t previously liked it by constructing a query which will add the row in the ‘likes’ table.
+```.py
+else:
+    # If the user hasn't liked the post yet, add their like
+    add_like_query = f"INSERT INTO likes(post_id, user_id) VALUES ({post_id}, {user_id})"
+    db.run_save(add_like_query)
+```
+To finish off this function will construct the query to count the numbers of likes of a specific post and another one to update the number of likes in the table.
+```.py
+likes_query = f"SELECT COUNT(*) FROM likes WHERE post_id={post_id}"
+likes_count = db.search(likes_query)[0][0]
+update_post_query = f"UPDATE posts SET likes={likes_count} WHERE id={post_id}"
+db.run_save(update_post_query)
+print(likes_count)
+
+db.close()
+```
+#### The whole like_post function:
+```.py
+@app.route('/all-posts/<int:post_id>/like', methods=['POST'])
+def like_post(post_id):
+    if request.cookies.get('user_id'):
+        user_id = int(request.cookies.get('user_id'))
+        db = database_worker("social_net.db")
+
+        # Check if the user has already liked the post
+        likes_query = f"SELECT * FROM likes WHERE post_id={post_id} AND user_id={user_id}"
+        user_like = db.search(likes_query)
+
+        if user_like:
+            # If the user has already liked the post, remove their like
+            delete_like_query = f"DELETE FROM likes WHERE post_id={post_id} AND user_id={user_id}"
+            db.run_save(delete_like_query)
+
+        else:
+            # If the user hasn't liked the post yet, add their like
+            add_like_query = f"INSERT INTO likes(post_id, user_id) VALUES ({post_id}, {user_id})"
+            db.run_save(add_like_query)
+
+        # Update the likes count for the post in the database
+        likes_query = f"SELECT COUNT(*) FROM likes WHERE post_id={post_id}"
+        likes_count = db.search(likes_query)[0][0]
+        update_post_query = f"UPDATE posts SET likes={likes_count} WHERE id={post_id}"
+        db.run_save(update_post_query)
+        print(likes_count)
+
+        db.close()
+
+        return redirect(url_for("allposts"))
+    else:
+        return redirect(url_for("login")
+```
+I have again used abstraction as I have used functions and modules to abstract away complex tasks, making the code easier to understand and reuse.
+
+### Success criteria 6: The social network includes a top navigation bar that is visible on pages so it guides users to each page. 
+
+My 6th success criteria requires a navigation bar that is present in pages so it guides the users through the pages and make it look more organized. After noticing that the bar appeared repeatedly throughout all of the sites, I used pattern recognition and made a base template (base.html) that could be applied to and extended over all of the pages. 
+
+Because I constructed a new template that can be reused and expanded as necessary, rather than duplicating the code for the navigation bar on every page, I also used abstraction as a computational skill in this case. This strategy encourages efficiency and maintainability because any modifications made to the base template will spread to all the pages instantly. Therefore, if I need to change the structure by, for example, adding another page, there won't be a requirement for particular adjustments within each HTML file. Future developers would also find it simpler if they wanted to expand the website's page count.
+
+```.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>{{ title }} </title>
+    {% else %}
+    <title>Welcome</title>
+    {% endif %}
+    <link rel="stylesheet" href = "/static/mystyle.css">
+</head>
+
+<div class="banner">
+        <div class="navbar">
+            <img src="/static/hellacutetransparent.png" class="logo">
+            <ul>
+                <li><a href="/post">Create a post</a></li>
+                <li><a href="/statistics">Statistics</a></li>
+                <li><a href="/account">My profile</a></li>
+                <li><a href="/login">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+<body>
+
+{% block content %} {% endblock %}
+
+</body>
+
+</html>
+```
+
+# Appendix
 ## Appendix 1: Client interview - Purpose and requirements
 ![Screen Shot 2023-05-08 at 1 13 49](https://user-images.githubusercontent.com/111895127/236689365-00a6da4e-139c-45c8-9ab0-cc0649e3da41.png)
 
