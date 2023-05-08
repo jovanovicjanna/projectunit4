@@ -246,8 +246,7 @@ When forming this code I divided the task of posting a review into smaller steps
 
 # Succes criteria 3: Users must be able to view the review posted by other users.
 
-The code shown below is response to one of my success criterias which will allow user to view posts posted by other users. It was quite easy to made, since the only thing was to make a query which will display everything from table posts, in a reverse chronological order (the newest one being at the top of the page). The harder part was designing the post-boxes and putting them in a right positions, as well as making visually appealing like button.
- 
+The code shown below is response to one of my success criterias which will allow user to view posts posted by other users. It was quite easy to made, since the only thing was to make a query which will display everything from table posts, in a reverse chronological order (the newest one being at the top of the page). The harder part was making a visually appealing like button, but I have found CSS template using OpenAI [^6].
 
 ```.py
 @app.route('/all-posts')
@@ -379,7 +378,7 @@ Because I constructed a new template that can be reused and expanded as necessar
 ```
 ### Design/ HTML & CSS
 
-As I wanted to make my social network visually appealing I have took extra care of when it comes to consideration of colors and visual effects. I have chosen to keep the look of my website simple and modern, with a logo of a social network and navigation bar on top of every page. Colors that I have chosen are black (#000000), white (#FFFFFF), and  #009699. And the feature of my design I am especially proud of is hovering effect on every button when I move the cursor on my screen. 
+As I wanted to make my social network visually appealing I have took extra care of when it comes to consideration of colors and visual effects. I have chosen to keep the look of my website simple and modern, with a logo of a social network and navigation bar on top of every page. Colors that I have chosen are black (#000000), white (#FFFFFF), and  #009699. And the feature of my design I am especially proud of is hovering effect on every button when I move the cursor on my screen. The template I have used was from the youtube tutorial [^5] that I have found which I have modified to fit my clients needs.
 
 The CSS code below shows a general template for every button on my screen.
 
@@ -421,7 +420,9 @@ button:hover{
 }
 
 ```
+# Criterion D: Functionality and Extensibility
 
+# Criterion E: Evaluation
 
 # Appendix
 ## Appendix 1: Client interview - Purpose and requirements
@@ -436,3 +437,7 @@ Fig x shows my notes from the first interview with the client
 [^3]: “Flask vs Django: What’s the Difference between Flask & Django?” Www.guru99.com, www.guru99.com/flask-vs-django.html.
 
 [^4]: “SQLite Documentation.” Sqlite.org, sqlite.org/docs.html.
+
+[^5]: “How to Make Website Using HTML and CSS | Website Design with HTML and CSS.” Www.youtube.com, www.youtube.com/watch?v=PgAZ8KzfhO8.
+
+[^6]: ChatGPT. “ChatGPT.” Chat.openai.com, 2023, chat.openai.com/.
