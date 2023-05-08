@@ -35,9 +35,9 @@ I will design and make a social network for a client who is a student at a local
 ## Criteria for Success
 1. The social network has a login and register system. *[issue tackled=” Other social networks ”]*
 2. The user must be able to input their reviews of a product, rate them, and delete them. *[issue tackled=Moreover, she would like to make reviews of the makeup she tries and share her experience with others.]*
-3. Users must be able to view the review posted by other users. *[issue tackled = she is not able to learn from people who know more than she does and view their reviews on products.]*
+3. Users must be able to view the reviews posted by other users. *[issue tackled = she is not able to learn from people who know more than she does and view their reviews on products.]*
 4. Users must be able to view basic statistics. [*issue tackled =  Other social networks are not well-established communities ]*
-5. Users must be able to like reviews posted by other users. *[issue tackled = Other social networks are not well-established communities concentrated just on makeup.]*
+5. Users must be able to like reviews. *[issue tackled = Other social networks are not well-established communities concentrated just on makeup.]*
 6. The social network includes a top navigation bar that is visible on pages so it guides users to each page. *[issue tackled = Currently, she is exploring her area of interest through various social media apps but the information is too disorganized as it does not guide viewers to each page]*
 # Criterion B: Design Overview
 ## System diagram
