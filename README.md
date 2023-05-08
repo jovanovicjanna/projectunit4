@@ -244,7 +244,18 @@ If the request method is ‘POST’ code checks whether the some of the fields i
 
 When forming this code I divided the task of posting a review into smaller steps, such as checking whether the user is logged in, getting the user ID from a cookie, or inserting the review into the database and therefore used decomposition as the part of computational thinking.
 
+# Succes criteria 3: Users must be able to view the review posted by other users.
 
+The code shown below is response to one of my success criterias which will allow user to view posts posted by other users. It was quite easy to made, since the only thing was to make a query which will display everything from table posts, in a reverse chronological order (the newest one being at the top of the page). The harder part was designing the post-boxes and putting them in a right positions, as well as making visually appealing like button.
+ 
+
+```.py
+@app.route('/all-posts')
+def allposts():
+    db = database_worker("social_net.db")
+    posts = db.search(f"select * from posts ORDER BY created_at DESC")
+    return render_template("all-posts.html", posts=posts,users=users)
+```
 
 ### Success criteria 4: Users must be able to view basic statistics.
 
@@ -366,6 +377,51 @@ Because I constructed a new template that can be reused and expanded as necessar
 
 </html>
 ```
+### Design/ HTML & CSS
+
+As I wanted to make my social network visually appealing I have took extra care of when it comes to consideration of colors and visual effects. I have chosen to keep the look of my website simple and modern, with a logo of a social network and navigation bar on top of every page. Colors that I have chosen are black (#000000), white (#FFFFFF), and  #009699. And the feature of my design I am especially proud of is hovering effect on every button when I move the cursor on my screen. 
+
+The CSS code below shows a general template for every button on my screen.
+
+```.css
+button{
+    width:200px;
+    padding:15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* fill in */
+span{
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1; /*this makes text go on top of color */
+    transition: 0.5s;
+}
+
+button:hover span{
+    width: 100%;
+}
+
+button:hover{
+    border: none;
+}
+
+```
+
 
 # Appendix
 ## Appendix 1: Client interview - Purpose and requirements
