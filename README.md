@@ -424,12 +424,46 @@ button:hover{
 
 # Criterion E: Evaluation
 
+## Client (Record of this is in the appendix)
+
+| Criteria                                                                                                      | Met or Not? | Feedback                                                                  |
+|---------------------------------------------------------------------------------------------------------------|-------------|---------------------------------------------------------------------------|
+| 1. The social network has a login and register system.                                                        | Met         | Client has no additional feedback                                         |
+| 2. The user must be able to input their reviews of a product, rate them, and delete them.                     | Met         | Ratings could be formatted differently, instead of text box maybe slider  |
+| 3. Users must be able to view reviews posted by other users.                                                  | Met         | Would be nice if there were pictures of the products                      |
+| 4. Users must be able to view basic statistics.                                                               | Met         | Client has no additional feedback                                         |
+| 5. Users must be able to like posts.                                                                          | Met         | Client has no additional feedback                                         |
+| 6. The social network includes a top navigation bar that is visible on pages so it guides users to each page. | Met         | Client has no additional feedback                                         |
+
+## Other user (Record of this is in the appendix 2)
+| Criteria                                                                                                      | Met or Not? | Feedback                                |
+|---------------------------------------------------------------------------------------------------------------|-------------|-----------------------------------------|
+| 1. The social network has a login and register system.                                                        | Met         | User has no additional feedback         |
+| 2. The user must be able to input their reviews of a product, rate them, and delete them.                     | Met         | User has no additional feedback                     |
+| 3. Users must be able to view reviews posted by other users.                                               | Met         | Would be nice if user can comment on the post         |
+| 4. Users must be able to view basic statistics.                                                               | Met         | Add feature to see most famous products |
+| 5. Users must be able to like posts.                                                                          | Met         | User has no additional feedback         |
+| 6. The social network includes a top navigation bar that is visible on pages so it guides users to each page. | Met         | User has no additional feedback         |
+
+## Suggestions for future development
+
+For future development the first suggestion was to make the formatting of the rating different, making it into a slider for example. This feature will ensure that the numbers are the only thing that is imputed when it comes to rating products. Right now the rating is just a regular text field that allows users to rate the product in whichever form they want.
+
+Another suggestion for future development would be to allow users to post images of the product they are reviewing in order for users to visualize the product which is being described. Currently, users can leave a review of the product but not an image.
+
+The third suggestion was to allow users to comment on other people's posts, which will increase the engagement and popularity of an application. For now, the user is able to like the post and engage with the content in that way, but not comment on it.
+
+The last suggestion was to update the statistics page and show the most popular product (the one with the highest ratings). Currently, the statistics page displays the number of users registered and the total number of posts on the social network.
+
 # Appendix
 ## Appendix 1: Client interview - Purpose and requirements
 ![Screen Shot 2023-05-08 at 1 13 49](https://user-images.githubusercontent.com/111895127/236689365-00a6da4e-139c-45c8-9ab0-cc0649e3da41.png)
 
 Fig x shows my notes from the first interview with the client
 
+## Appendix 2: 
+![Screen Shot 2023-05-08 at 22 22 01](https://user-images.githubusercontent.com/111895127/236835335-83b651e5-a185-4bc8-9508-64fb82ec8b9f.png)
+Fig x shows my notes after interview with the client and another user after the development of social network
 [^1]: Coursera. “What Is Python Used For? A Beginner’s Guide.” Coursera, 22 Sept. 2021, www.coursera.org/articles/what-is-python-used-for-a-beginners-guide-to-using-python.
 
 [^2]: “Python vs C++: What’s the Difference?” Www.guru99.com, www.guru99.com/python-vs-c-plus-plus.html.
