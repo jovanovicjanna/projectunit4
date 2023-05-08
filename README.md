@@ -41,35 +41,36 @@ I will design and make a social network for a client who is a student at a local
 6. The social network includes a top navigation bar that is visible on pages so it guides users to each page. *[issue tackled = Currently, she is exploring her area of interest through various social media apps but the information is too disorganized as it does not guide viewers to each page]*
 # Criterion B: Design Overview
 ## System diagram
-![unit4_systemdiagram](https://user-images.githubusercontent.com/111895127/236698521-34aaf592-8bc2-463d-95a5-9c256b90652c.png)
+![unit4_systemdiagram](https://user-images.githubusercontent.com/111895127/236838157-8eff5b3f-6528-48bd-bd25-580b8959aba3.png)
 
-Fig x shows the system diagram for the Hellacute network which is a visual representation of the system, its parts, and how they relate to one another. 
+
+Fig 2 shows the system diagram for the Hellacute network which is a visual representation of the system, its parts, and how they relate to one another. 
 
 ## Flow diagrams for algorithms
 ![Blank diagram (1)](https://user-images.githubusercontent.com/111895127/236694225-fbee2249-5671-4c24-8fb2-128448e815b3.png)
-Fig x shows the flow diagram for the login function
+Fig 3 shows the flow diagram for the login function
 
 This ‘login’ function takes email and password as user input. The function checks if the user already exists in the database and if the password is correct, and if both statements are true it creates a cookie with the user's ID and redirects them to the ‘post’ page. If user input is not in the database or the password is incorrect, the function displays an error message and renders the ‘login’ page.
 
 ![likesflowchart](https://user-images.githubusercontent.com/111895127/236696274-aa0d1ecc-08c3-43fb-a7bd-9c2df114ae65.png)
-Fig x shows the flow diagram for the like_post function
+Fig 4 shows the flow diagram for the like_post function
 
 This ‘like_post’ function allows users to like or unlike posts. It checks whether has user already liked the post and accordingly adds or removes likes. It updates the likes count in the posts table in the database and redirects the user to the ‘allposts’ page.
 
 ![postreviewflowchart](https://user-images.githubusercontent.com/111895127/236698406-f8310ed7-0fb0-4ebd-a724-e8c58b30eb2b.png)
-Fig x shows the flow diagram for the post_review function
+Fig 5 shows the flow diagram for the post_review function
 
 This ‘post_review’ function allows the user who is logged in to make a post by entering properties such as title, rating, and content. The user must fill out all the fields or else an error message will be displayed. Posts will be displayed in reverse chronological order (the newest one being at the top of the page).
 
 ## Wireframe diagram
 ![unit4wireframe_diagram (1)](https://user-images.githubusercontent.com/111895127/236603515-cd3ae0de-7d4a-4526-a44a-8713f5bf001d.png)
-Fig x shows the wireframe diagram for the Hellacute network
+Fig 6 shows the wireframe diagram for the Hellacute network
 
 This wireframe diagram's objective is to provide a visual representation of the user interface design that outlines the structure and layout of the social network. The wireframe also shows how various screens will be accessed via various buttons. The user can see which screen will open when they press and release the button according to the arrows that extend from the button to the screen.
 
 ## ER diagram
 ![unit4_erdiagram](https://user-images.githubusercontent.com/111895127/236603554-a630ea69-0334-4f8d-bfdf-9f51f76515b2.png)
-Fig x shows the ER diagram for the database that the client requires
+Fig 7 shows the ER diagram for the database that the client requires
 
 This is the ER diagram for the database illustrating the relationship between the “users”, “posts” and “likes” table from the “social_net” database. In the “users” table, there are 5 different columns including id, username email, password, and bio. Each column will have the specific data type after the column name. The second table “posts” has 7 columns which are id, title, rate, content, likes, created_at, and user_id. The third table “likes” has 3 columns id, post_id, and user_id. This diagram also shows that one user can have multiple posts which can have multiple likes.
 
@@ -77,15 +78,15 @@ This is the ER diagram for the database illustrating the relationship between th
 
 ![Screen Shot 2023-05-08 at 5 30 23](https://user-images.githubusercontent.com/111895127/236701264-76e3a714-f29c-4beb-9468-19b1762b59f7.png)
 
-Fig x shows the example of the data stored in the "users" table in the "social_net" database
+Fig 8 shows the example of the data stored in the "users" table in the "social_net" database
 
 ![Screen Shot 2023-05-08 at 5 35 50](https://user-images.githubusercontent.com/111895127/236701422-8ce56a55-12b1-43ff-923f-7b26f0ae07a1.png)
 
-Fig x shows the example of the data stored in the "posts" table in the "social_net" database
+Fig 9 shows the example of the data stored in the "posts" table in the "social_net" database
 
 ![Screen Shot 2023-05-08 at 5 36 52](https://user-images.githubusercontent.com/111895127/236701458-2a1cab37-05ca-4f88-a9b9-3e841a713254.png)
 
-Fig x shows the example of the data stored in the "likes" table in the "social_net" database
+Fig 10 shows the example of the data stored in the "likes" table in the "social_net" database
 
 ## Record of Task
 | Task No | Planned Action                                                           | Planned outcome                                                                                                                                                                                                                                                              | Time estimate | Target completion date | Criterion |
@@ -246,7 +247,7 @@ When forming this code I divided the task of posting a review into smaller steps
 
 # Succes criteria 3: Users must be able to view the review posted by other users.
 
-The code shown below is response to one of my success criterias which will allow user to view posts posted by other users. It was quite easy to made, since the only thing was to make a query which will display everything from table posts, in a reverse chronological order (the newest one being at the top of the page). The harder part was making a visually appealing like button, but I have found CSS template using OpenAI [^6].
+The code shown below is response to one of my success criterias which will allow user to view posts posted by other users. It was quite easy to made, since the only thing that had to be done was to make a query which will display everything from table posts, in a reverse chronological order (the newest one being at the top of the page). The harder part was making a visually appealing like button, but I have found CSS template using OpenAI [^5].
 
 ```.py
 @app.route('/all-posts')
@@ -435,7 +436,7 @@ button:hover{
 | 5. Users must be able to like posts.                                                                          | Met         | Client has no additional feedback                                         |
 | 6. The social network includes a top navigation bar that is visible on pages so it guides users to each page. | Met         | Client has no additional feedback                                         |
 
-## Other user (Record of this is in the appendix 2)
+## Other user (Record of this is in the appendix)
 | Criteria                                                                                                      | Met or Not? | Feedback                                |
 |---------------------------------------------------------------------------------------------------------------|-------------|-----------------------------------------|
 | 1. The social network has a login and register system.                                                        | Met         | User has no additional feedback         |
@@ -459,11 +460,11 @@ The last suggestion was to update the statistics page and show the most popular 
 ## Appendix 1: Client interview - Purpose and requirements
 ![Screen Shot 2023-05-08 at 1 13 49](https://user-images.githubusercontent.com/111895127/236689365-00a6da4e-139c-45c8-9ab0-cc0649e3da41.png)
 
-Fig x shows my notes from the first interview with the client
+Fig 11 shows my notes from the first interview with the client
 
 ## Appendix 2: 
 ![Screen Shot 2023-05-08 at 22 22 01](https://user-images.githubusercontent.com/111895127/236835335-83b651e5-a185-4bc8-9508-64fb82ec8b9f.png)
-Fig x shows my notes after interview with the client and another user after the development of social network
+Fig 12 shows my notes after interview with the client and another user after the development of social network
 [^1]: Coursera. “What Is Python Used For? A Beginner’s Guide.” Coursera, 22 Sept. 2021, www.coursera.org/articles/what-is-python-used-for-a-beginners-guide-to-using-python.
 
 [^2]: “Python vs C++: What’s the Difference?” Www.guru99.com, www.guru99.com/python-vs-c-plus-plus.html.
