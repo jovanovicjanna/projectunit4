@@ -16,7 +16,7 @@ After meeting with my client (see Appendix 1), I brainstormed about what the bes
 Website is the perfect option for my client because it can be accessed on any device that has an internet connection and a web browser. Additionally,  users can access the social network from their desktop, tablet, laptop, or smartphone. Compared to an application it doesn’t have to be installed which means the user can just simply access the website and start using the social network. For those reasons, this social network website has the potential to reach a wider audience than a social network application. This matches my client's concern about not having a well-established community and wanting to learn from other people, which means that the more popular the social network gets the more people she would get to interact with.
 
 ### Why Python?
-Python is a computer programming language often used to build websites and software [^1]. It has built-in data structures, combined with dynamic binding and typing, which makes it an ideal choice for rapid application development [^2]. Python has a very simple syntax compared to languages such as Java, C, and C++, which makes it easier to write and maintain code and allows other programmers to comprehend and use my code for future development [^2]. Additionally, Python has an extensive range of libraries and frameworks for web development, such as Django, Flask, and Pyramid, which allows me to build up a social network that is visually appealing to users [^2]. Languages such as C++ are not primarily intended for web development and do not offer built-in features for web development, such as HTML or CSS. This implies that to create web apps, I would need to write additional code or make use of external libraries, which can be difficult and time-consuming. 
+Python has a very simple syntax compared to languages such as Java, C, and C++, and because of that it has a large community of people using it, so other programmers to comprehend and use my code for future development. Additionally, Python is a programming language which is free of charge and open. The OSI-approved open source license under which the Python is developed makes it a language free to use and distribute, including for commercial purposes [^7]. 
 
 ### Why Flask?
 Flask is a micro framework offering basic features of web apps. This framework has no dependencies on external libraries [^3]. Flask support for secure cookies (client-side sessions). The usage of secure cookies to control client-side sessions is important when creating social networks or any other website that needs user identification. Secure cookies are more secure than plain text cookies because they are encrypted and can only be decrypted by the server that created them. Flask comes with built-in support for secure cookies, making it simple to build client-side sessions without having to write any additional code. Compared to the Django library, for example, Flask is a lightweight and more flexible framework. For smaller projects, Flask may be quicker and more effective because it has a lower footprint than Django. Due to its reduced size and fewer dependencies, Flask is simpler to deploy and maintain [^3].
@@ -36,14 +36,12 @@ I will design and make a social network for a client who is a student at a local
 1. The social network has a login and register system. *[issue tackled=” Other social networks ”]*
 2. The user must be able to input their reviews of a product, rate them, and delete them. *[issue tackled=Moreover, she would like to make reviews of the makeup she tries and share her experience with others.]*
 3. Users must be able to view the reviews posted by other users. *[issue tackled = she is not able to learn from people who know more than she does and view their reviews on products.]*
-4. Users must be able to view basic statistics. [*issue tackled =  Other social networks are not well-established communities ]*
+4. Users must be able to view basic statistics such as number of users registered and number of posts. [*issue tackled =  Other social networks are not well-established communities ]*
 5. Users must be able to like reviews. *[issue tackled = Other social networks are not well-established communities concentrated just on makeup.]*
 6. The social network includes a top navigation bar that is visible on pages so it guides users to each page. *[issue tackled = Currently, she is exploring her area of interest through various social media apps but the information is too disorganized as it does not guide viewers to each page]*
 # Criterion B: Design Overview
 ## System diagram
 ![unit4_systemdiagram (1)](https://github.com/jovanovicjanna/projectunit4/assets/111895127/98d20eed-5459-4a09-821d-61639c3a6480)
-
-
 
 Fig 2 shows the system diagram for the Hellacute network which is a visual representation of the system, its parts, and how they relate to one another. 
 
@@ -434,7 +432,7 @@ button:hover{
 | 1. The social network has a login and register system.                                                        | Met         | Client has no additional feedback                                         |
 | 2. The user must be able to input their reviews of a product, rate them, and delete them.                     | Met         | Ratings could be formatted differently, instead of text box maybe slider  |
 | 3. Users must be able to view reviews posted by other users.                                                  | Met         | Would be nice if there were pictures of the products                      |
-| 4. Users must be able to view basic statistics.                                                               | Met         | Client has no additional feedback                                         |
+| 4. Users must be able to view basic statistics such as number of users registered and number of posts.| Met         | Client has no additional feedback                                         |
 | 5. Users must be able to like posts.                                                                          | Met         | Client has no additional feedback                                         |
 | 6. The social network includes a top navigation bar that is visible on pages so it guides users to each page. | Met         | Client has no additional feedback                                         |
 
@@ -444,7 +442,7 @@ button:hover{
 | 1. The social network has a login and register system.                                                        | Met         | User has no additional feedback         |
 | 2. The user must be able to input their reviews of a product, rate them, and delete them.                     | Met         | User has no additional feedback                     |
 | 3. Users must be able to view reviews posted by other users.                                               | Met         | Would be nice if user can comment on the post         |
-| 4. Users must be able to view basic statistics.                                                               | Met         | Add feature to see most famous products |
+| 4. Users must be able to view basic statistics such as number of users registered and number of posts.                                                              | Met         | Add feature to see most famous products |
 | 5. Users must be able to like posts.                                                                          | Met         | User has no additional feedback         |
 | 6. The social network includes a top navigation bar that is visible on pages so it guides users to each page. | Met         | User has no additional feedback         |
 
@@ -479,3 +477,5 @@ Fig 12 shows my notes after interview with the client and another user after the
 [^5]: “How to Make Website Using HTML and CSS | Website Design with HTML and CSS.” Www.youtube.com, www.youtube.com/watch?v=PgAZ8KzfhO8.
 
 [^6]: ChatGPT. “ChatGPT.” Chat.openai.com, 2023, chat.openai.com/.
+
+[^7]: “Top Advantages of Python over Other Programming Languages.” Edoxi Training, www.edoxi.com/studyhub-detail/advantages-of-python-over-other-programming-languages.
