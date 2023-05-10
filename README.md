@@ -466,6 +466,7 @@ Fig 11 shows my notes from the first interview with the client
 
 ## Appendix 2: 
 ![Screen Shot 2023-05-08 at 22 22 01](https://user-images.githubusercontent.com/111895127/236835335-83b651e5-a185-4bc8-9508-64fb82ec8b9f.png)
+
 Fig 12 shows my notes after interview with the client and another user after the development of social network
 [^1]: Coursera. “What Is Python Used For? A Beginner’s Guide.” Coursera, 22 Sept. 2021, www.coursera.org/articles/what-is-python-used-for-a-beginners-guide-to-using-python.
 
