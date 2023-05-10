@@ -41,7 +41,8 @@ I will design and make a social network for a client who is a student at a local
 6. The social network includes a top navigation bar that is visible on pages so it guides users to each page. *[issue tackled = Currently, she is exploring her area of interest through various social media apps but the information is too disorganized as it does not guide viewers to each page]*
 # Criterion B: Design Overview
 ## System diagram
-![unit4_systemdiagram](https://user-images.githubusercontent.com/111895127/236838157-8eff5b3f-6528-48bd-bd25-580b8959aba3.png)
+![unit4_systemdiagram (1)](https://github.com/jovanovicjanna/projectunit4/assets/111895127/98d20eed-5459-4a09-821d-61639c3a6480)
+
 
 
 Fig 2 shows the system diagram for the Hellacute network which is a visual representation of the system, its parts, and how they relate to one another. 
@@ -63,7 +64,8 @@ Fig 5 shows the flow diagram for the post_review function
 This ‘post_review’ function allows the user who is logged in to make a post by entering properties such as title, rating, and content. The user must fill out all the fields or else an error message will be displayed. Posts will be displayed in reverse chronological order (the newest one being at the top of the page).
 
 ## Wireframe diagram
-![unit4wireframe_diagram (1)](https://user-images.githubusercontent.com/111895127/236603515-cd3ae0de-7d4a-4526-a44a-8713f5bf001d.png)
+![unit4wireframe_diagram (1)](https://github.com/jovanovicjanna/projectunit4/assets/111895127/dd39007e-08bf-4d0c-bc4d-2efbee2204b9)
+
 Fig 6 shows the wireframe diagram for the Hellacute network
 
 This wireframe diagram's objective is to provide a visual representation of the user interface design that outlines the structure and layout of the social network. The wireframe also shows how various screens will be accessed via various buttons. The user can see which screen will open when they press and release the button according to the arrows that extend from the button to the screen.
