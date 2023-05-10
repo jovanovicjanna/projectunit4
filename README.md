@@ -16,7 +16,7 @@ After meeting with my client (see Appendix 1), I brainstormed about what the bes
 Website is the perfect option for my client because it can be accessed on any device that has an internet connection and a web browser. Additionally,  users can access the social network from their desktop, tablet, laptop, or smartphone. Compared to an application it doesn’t have to be installed which means the user can just simply access the website and start using the social network. For those reasons, this social network website has the potential to reach a wider audience than a social network application. This matches my client's concern about not having a well-established community and wanting to learn from other people, which means that the more popular the social network gets the more people she would get to interact with.
 
 ### Why Python?
-Python has a very simple syntax compared to languages such as Java, C, and C++, and because of that it has a large community of people using it, so other programmers to comprehend and use my code for future development. Additionally, Python is a programming language which is free of charge and open. The OSI-approved open source license under which the Python is developed makes it a language free to use and distribute, including for commercial purposes [^7]. 
+Python has a very simple syntax compared to languages such as Java, C, and C++, and because of that it has a large community of people using it, so other programmers to comprehend and use my code for future development. Additionally, Python is a programming language which is free of charge and open. The OSI-approved open source license under which the Python is developed makes it a language free to use and distribute, including for commercial purposes [^6]. 
 
 ### Why Flask?
 Flask is a micro framework offering basic features of web apps. This framework has no dependencies on external libraries [^3]. Flask support for secure cookies (client-side sessions). The usage of secure cookies to control client-side sessions is important when creating social networks or any other website that needs user identification. Secure cookies are more secure than plain text cookies because they are encrypted and can only be decrypted by the server that created them. Flask comes with built-in support for secure cookies, making it simple to build client-side sessions without having to write any additional code. Compared to the Django library, for example, Flask is a lightweight and more flexible framework. For smaller projects, Flask may be quicker and more effective because it has a lower footprint than Django. Due to its reduced size and fewer dependencies, Flask is simpler to deploy and maintain [^3].
@@ -377,50 +377,7 @@ Because I constructed a new template that can be reused and expanded as necessar
 
 </html>
 ```
-### Design/ HTML & CSS
 
-As I wanted to make my social network visually appealing I have took extra care of when it comes to consideration of colors and visual effects. I have chosen to keep the look of my website simple and modern, with a logo of a social network and navigation bar on top of every page. Colors that I have chosen are black (#000000), white (#FFFFFF), and  #009699. And the feature of my design I am especially proud of is hovering effect on every button when I move the cursor on my screen. The template I have used was from the youtube tutorial [^5] that I have found which I have modified to fit my clients needs.
-
-The CSS code below shows a general template for every button on my screen.
-
-```.css
-button{
-    width:200px;
-    padding:15px 0;
-    text-align: center;
-    margin: 20px 10px;
-    border-radius: 25px;
-    font-weight: bold;
-    border: 2px solid #009688;
-    background: transparent;
-    color: #FFFFFF;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-/* fill in */
-span{
-    background: #009688;
-    height: 100%;
-    width: 0;
-    border-radius: 25px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1; /*this makes text go on top of color */
-    transition: 0.5s;
-}
-
-button:hover span{
-    width: 100%;
-}
-
-button:hover{
-    border: none;
-}
-
-```
 # Criterion D: Functionality and Extensibility
 
 # Criterion E: Evaluation
@@ -474,8 +431,6 @@ Fig 12 shows my notes after interview with the client and another user after the
 
 [^4]: “SQLite Documentation.” Sqlite.org, sqlite.org/docs.html.
 
-[^5]: “How to Make Website Using HTML and CSS | Website Design with HTML and CSS.” Www.youtube.com, www.youtube.com/watch?v=PgAZ8KzfhO8.
+[^5]: ChatGPT. “ChatGPT.” Chat.openai.com, 2023, chat.openai.com/.
 
-[^6]: ChatGPT. “ChatGPT.” Chat.openai.com, 2023, chat.openai.com/.
-
-[^7]: “Top Advantages of Python over Other Programming Languages.” Edoxi Training, www.edoxi.com/studyhub-detail/advantages-of-python-over-other-programming-languages.
+[^6]: “Top Advantages of Python over Other Programming Languages.” Edoxi Training, www.edoxi.com/studyhub-detail/advantages-of-python-over-other-programming-languages.
