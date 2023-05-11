@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile page</title>
+    <link rel="stylesheet" href="/static/profilestyle.css">
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="/static/hellacutetransparent.png" class="logo">
+            <ul>
+                <li><a href="/all-posts">View reviews</a></li>
+                <li><a href="/statistics">Statistics</a></li>
+                <li><a href="/account">My profile</a></li>
+                <li><a href="/login">Logout</a></li>
+            </ul>
+         </div>
+    </div>
+
+<h3>Your posts are:</h3>
+<div class="post-container">
+  {% for p in posts %}
+  <div class="post-box">
+      <h2>Product: {{p[1] }}</h2>
+      <br>
+      <p><strong>Rating: </strong> {{ p[2] }}</p>
+      <br>
+      <p><strong>Review: </strong>{{ p[3] }}</p>
+      <br>
+      <p><strong>Created on: </strong>{{ p[5] }}</p>
+      <br>
+      <p><strong>Likes: </strong>{{ p[6] }}</p>
+  <form method="post" action="/delete_post">
+          <input type="hidden" name="post_id" value="{{p[0]}}">
+          <button type="submit"><span></span>Delete</button>
+      </form>
+  </div>
+  {% endfor %}
+</div>
+    <div class="newpost">
+    <h2>Create a new post</h2>
+    <br>
+        {% if error_message %}
+        <p style="color: red">{{ error_message }}</p>
+        {% endif %}
+    <form method="post">
+        <p class="title">Name of the product <input type="text" name="title" placeholder="Enter the name of the product"></p>
+        <p class="rate">Rating <input type="text" name="rate" placeholder="Enter your rating"></p>
+        <p class="content">Review <input type="text" name="content" placeholder="Enter a brief description"></p>
+        <button type="submit"><span></span>Save</button>
+    </form>
+    </div>
+
+</body>
+</html>
