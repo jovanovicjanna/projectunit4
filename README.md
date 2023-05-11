@@ -18,9 +18,13 @@ Website is the perfect option for my client because it can be accessed on any de
 ### Why Python?
 Python has a very simple syntax compared to languages such as Java, C, and C++, and due to that it has a large community of people using it, so other programmers can comprehend and use my code for future development if that is something my client wants to do. Additionally, using Python as the development language can help reduce cost for my client, as they don’t have to pay any licensing fees to use it.
 
+### Why Flask?
+
+Flask is a micro framework offering basic features of web apps. This framework has no dependencies on external libraries. Flask support for secure cookies (client-side sessions). The usage of secure cookies to control client-side sessions is important when creating social networks or any other website that needs user identification. Secure cookies are more secure than plain text cookies because they are encrypted and can only be decrypted by the server that created them. Compared to the Django library, for example, Flask is a lightweight and more flexible framework. For smaller projects, Flask may be quicker and more effective because it has a lower footprint than Django [^2]. 
+
 ### Why SQLite?
 
-SQLite databases can provide a level of data security for users. Unlike in databases such as MongoDB, the database file can be encrypted or password-protected, ensuring that sensitive information stored within the database remains secure. This feature is valuable for social networks which have a login and register system, so my client will be able to protect her personal data.
+SQLite is a compact, file-based relational database, which doesn't need a separate server or installation procedure. This makes it an excellent option for small projects or applications where usability and simplicity are crucial [^1]. SQLite maintains data in a single file, simplifying usage, upkeep, and access. If we compare SQLite with other ways to store data, such as CSV files, SQLite stores data in a structured, orderly format that makes data retrieval and querying quick and easy. Contrarily, CSV saves data in a plain-text format that might be challenging to read and efficiently query. Additionally, data security is improved by SQLite's support for features like encryption and password protection whereas CSV files lack any built-in security protections and are easily readable and modifiable by anyone with access to the file. The ability to encrypt data matches my success criteria for registration and login system and ensures that the user information is protected.
 
 ### Why HTML and CSS?
 HTML and CSS are the foundational languages used in website creation. The structure and content of the website can be created using HTML, and the styling and layout may be changed using CSS. They provide websites with their overall structure and aesthetics together. Additionally, they have been around for decades, which allows me as a developer to find a large number of resources to help me create a social network. My client is dissatisfied by the disorganization of the other social networking sites, meaning that the more resources I can find in terms of visuals for the application, the website will be more simple and good looking.
@@ -373,24 +377,17 @@ The last suggestion was to update the statistics page and show the most popular 
 ## Appendix 1: Client interview - Purpose and requirements
 ![Screen Shot 2023-05-08 at 1 13 49](https://user-images.githubusercontent.com/111895127/236689365-00a6da4e-139c-45c8-9ab0-cc0649e3da41.png)
 
-Fig 11 shows my notes from the first interview with the client
+Fig 12 shows my notes from the first interview with the client
 
 ## Appendix 2: 
 ![Screen Shot 2023-05-08 at 22 22 01](https://user-images.githubusercontent.com/111895127/236835335-83b651e5-a185-4bc8-9508-64fb82ec8b9f.png)
 
-Fig 12 shows my notes after interview with the client and another user after the development of social network
+Fig 13 shows my notes after interview with the client and another user after the development of social network
 
 ## Appendix 3:
 ![Screen Shot 2023-05-11 at 17 29 34](https://github.com/jovanovicjanna/projectunit4/assets/111895127/5be2ea79-2c2e-4cd3-9eb7-b724d411f8a1)
-Fig 14 shows notes for my video planning
-[^1]: Coursera. “What Is Python Used For? A Beginner’s Guide.” Coursera, 22 Sept. 2021, www.coursera.org/articles/what-is-python-used-for-a-beginners-guide-to-using-python.
+Fig 15 shows notes for my video planning
 
-[^2]: “Python vs C++: What’s the Difference?” Www.guru99.com, www.guru99.com/python-vs-c-plus-plus.html.
+[^1]: “SQLite Documentation.” Sqlite.org, sqlite.org/docs.html.
 
-[^3]: “Flask vs Django: What’s the Difference between Flask & Django?” Www.guru99.com, www.guru99.com/flask-vs-django.html.
-
-[^4]: “SQLite Documentation.” Sqlite.org, sqlite.org/docs.html.
-
-[^5]: ChatGPT. “ChatGPT.” Chat.openai.com, 2023, chat.openai.com/.
-
-[^6]: “Top Advantages of Python over Other Programming Languages.” Edoxi Training, www.edoxi.com/studyhub-detail/advantages-of-python-over-other-programming-languages.
+[^2]: “Flask vs Django: What’s the Difference between Flask & Django?” Www.guru99.com, www.guru99.com/flask-vs-django.html.
