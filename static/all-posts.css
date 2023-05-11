@@ -1,0 +1,305 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.banner{
+    width: 100%;
+    height: 3vh;
+    background-image: url("background.png");
+    background-size: cover;
+    background-position: center;
+}
+
+body{
+  background-image: url("background.png");
+  color: #fff;
+}
+
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+
+form{
+  width: 50%;
+  margin: auto;
+  margin-top: 50px;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+fieldset{
+  border: none;
+  margin-bottom: 20px;
+}
+
+legend{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+label{
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+    background-color: rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+.button[type="submit"]{
+    width:200px;
+    padding:15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+
+span{
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1; /*this makes text go on top of color */
+    transition: 0.5s;
+}
+
+.button[type="submit"]:hover span{
+  width: 100%;
+}
+
+.button[type="submit"]:hover{
+  border: none;
+}
+
+.newpost {
+  position: fixed;
+  top: 53%;
+  right: 25px;
+  transform: translateY(-50%);
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid #009688;
+}
+
+.post-box {
+  top: 50%;
+  right: calc(100% - 500px);
+  transform: translateY(-50%);
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid #009688;
+  margin-bottom: 20px;
+    margin-left: 20vh;
+  width: 500px;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 30vh;
+  position: absolute;
+  top: 15vh; /* adjust the value based on your design */
+  left: 20%;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    left: 20.5%;
+    top: 23%;
+    position: absolute;
+}
+
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+
+/* space between options */
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin:0 20px;
+    position: relative; /*this adds hover line from the bottom of the bage to the options */
+}
+
+/* hover text below options */
+.navbar ul li a{
+    text-decoration: none;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009699;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+/*cursor moving for optins */
+.navbar ul li:hover::after{
+    width: 100%
+}
+
+.postedby {
+  margin-top: auto;
+  text-align: right;
+}
+.account-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.account-box {
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid #009688;
+  margin-bottom: 20px;
+  width: 500px;
+  text-align: center;
+}
+
+
+
+h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    align-items: center;
+    left: 32%;
+    top: 33%;
+    position: absolute;
+}
+
+/*our community is getting bigger day by day */
+
+.bigtext{
+    font-size: 63px;
+    margin-top: 200px;
+}
+.smalltext {
+  font-size: 45px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-box {
+  font-size: 30px;
+  margin-top: 50px;
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid #009688;
+  width: 200px; /* set a fixed width */
+  text-align: center;
+}
+
+.stats{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styles for the like button */
+.post-box .like-button {
+  border: none;
+  background-color: transparent;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.like-button:hover {
+  color: #e0245e;
+}
+
+.like-button:focus {
+  outline: none;
+}
+
+
+.like-button i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.like-button span {
+  margin-left: 5px;
+}
+
+.fa-heart {
+  font-size: 40px;
+  color: #e0245e;
+}
+
+.post-box .form-likes {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 0;
+}
