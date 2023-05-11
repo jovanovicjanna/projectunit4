@@ -386,6 +386,7 @@ Fig 13 shows my notes after interview with the client and another user after the
 
 ## Appendix 3:
 ![Screen Shot 2023-05-11 at 17 29 34](https://github.com/jovanovicjanna/projectunit4/assets/111895127/5be2ea79-2c2e-4cd3-9eb7-b724d411f8a1)
+
 Fig 15 shows notes for my video planning
 
 [^1]: “SQLite Documentation.” Sqlite.org, sqlite.org/docs.html.
