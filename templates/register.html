@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="/static/register.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="/static/hellacutetransparent.png" class="logo">
+         </div>
+    </div>
+
+  <form  method="post" enctype="multipart/form-data">
+
+    <h1>Register</h1>
+    {% if error_message %}
+        <p style="color: red">{{ error_message }}</p>
+        {% endif %}
+    <fieldset>
+      <legend><span class="number"></span>Your basic info</legend>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required placeholder="Enter a username">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required placeholder="Enter an email">
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required placeholder="Enter a password (must be longer than 8 characters)" >
+
+      <label for="password">Re-enter Password</label>
+      <input type="password" id="check_password" name="check_password" required placeholder="Re-enter a password">
+
+        <legend><span class="number"></span>Your basic info</legend>
+        <label for="bio">Biography</label>
+      <textarea id="bio" name="description" required placeholder="Enter a brief description about yourself :)"></textarea>
+
+    </fieldset>
+
+  <!-- span is for the hover effect -->
+      <button type="submit"><span></span>Register</button>
+  </form>
+
+</body>
+</html>
