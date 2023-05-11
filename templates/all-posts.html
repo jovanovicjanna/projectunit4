@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/static/all-posts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="/static/hellacutetransparent.png" class="logo">
+            <ul>
+                <li><a href="/post">Create a post</a></li>
+                <li><a href="/statistics">Statistics</a></li>
+                <li><a href="/account">My profile</a></li>
+                <li><a href="/login">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="post-container">
+    {% for p in posts %}
+            <div class="post-box">
+          <h2>Product: {{p[1] }}</h2>
+          <br>
+          <p><strong>Rate: </strong> {{ p[2] }}</p>
+          <br>
+          <p><strong>Review: </strong>{{ p[3] }}</p>
+          <br>
+          <p><strong>Created on: </strong>{{ p[5] }}</p>
+                <br>
+          <p class="postedby">Posted by User no. {{ p[4] }}</p>
+          <form method="POST" action="{{ url_for('like_post', post_id=p[0]) }}" class="form-likes">
+              <p><strong>Likes</strong></p>
+            <button class="like-button" type="submit">
+            <i id="like-icon" class="fa fa-heart-o"><span id="likes"></span>{{ p[6] }}</i>
+            </button>
+          </form>
+        </div>
+
+    {% endfor %}
+    </div>
+</body>
+</html>
