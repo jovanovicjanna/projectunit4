@@ -18,9 +18,6 @@ Website is the perfect option for my client because it can be accessed on any de
 ### Why Python?
 Python has a very simple syntax compared to languages such as Java, C, and C++, and due to that it has a large community of people using it, so other programmers can comprehend and use my code for future development if that is something my client wants to do. Additionally, using Python as the development language can help reduce cost for my client, as they don’t have to pay any licensing fees to use it.
 
-### Why Flask?
-Flask is a micro framework offering basic features of web apps. This framework has no dependencies on external libraries [^3]. Flask support for secure cookies (client-side sessions). The usage of secure cookies to control client-side sessions is important when creating social networks or any other website that needs user identification. Secure cookies are more secure than plain text cookies because they are encrypted and can only be decrypted by the server that created them. Compared to the Django library, for example, Flask is a lightweight and more flexible framework. For smaller projects, Flask may be quicker and more effective because it has a lower footprint than Django. Due to its reduced size and fewer dependencies, Flask is simpler to deploy and maintain [^3].
-
 ### Why SQLite?
 
 SQLite databases can provide a level of data security for users. Unlike in databases such as MongoDB, the database file can be encrypted or password-protected, ensuring that sensitive information stored within the database remains secure. This feature is valuable for social networks which have a login and register system, so my client will be able to protect her personal data.
@@ -332,6 +329,12 @@ My 6th success criterion requires a navigation bar that is present on pages so i
  ```
 
 # Criterion D: Functionality and Extensibility
+
+Link for the video which demonstrates functionality and extensibility:
+
+https://drive.google.com/drive/u/0/folders/1bJSniSewiFkJjnkZ8VJ6LtvuND-au89h
+
+Planning for the video is in the Appendix 3
 
 # Criterion E: Evaluation
 
