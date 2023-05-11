@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/static/all-posts.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="/static/hellacutetransparent.png" class="logo">
+            <ul>
+                <li><a href="/all-posts">View reviews</a></li>
+                <li><a href="/statistics">Statistics</a></li>
+                <li><a href="/post">create a post</a></li>
+                <li><a href="/login">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <h3>Your account information:</h3>
+    <div class="account-container">
+      {% for u in user %}
+      <div class="account-box">
+          <h2>Welcome {{ u[1] }}!</h2>
+          <br>
+          <p><strong>User no. </strong> {{ u[0] }}</p>
+          <br>
+          <p><strong>Username: </strong>{{ u[1] }}</p>
+          <br>
+          <p><strong>Email: </strong>{{ u[2] }}</p>
+          <br>
+          <p><strong>Bio: </strong>{{ u[4] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+</body>
+</html>
