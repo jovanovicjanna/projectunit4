@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Statistics</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='all-posts.css')}}">
+</head>
+<body>
+	<div class="banner">
+		<div class="navbar">
+			<img src="{{ url_for('static', filename='hellacutetransparent.png') }}" class="logo">
+			<ul>
+                <li><a href="/post">Create a post</a></li>
+                <li><a href="/all-posts">View reviews</a></li>
+                <li><a href="/account">My profile</a></li>
+                <li><a href="/login">Logout</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container">
+		<h1 class="bigtext">Our community is getting bigger day by day</h1>
+        <p class="smalltext">Currently we have</p>
+		<div class="stats">
+			<div class="stat-box">
+				<p>{{ no_user }} Users</p>
+			</div>
+			<div class="stat-box">
+				<p>{{ no_post }} Posts</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
