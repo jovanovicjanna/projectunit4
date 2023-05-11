@@ -250,9 +250,16 @@ If the request method is ‘POST’ code checks whether the some of the fields i
 
 When forming this code I divided the task of posting a review into smaller steps, such as checking whether the user is logged in, getting the user ID from a cookie, or inserting the review into the database and therefore used decomposition as the part of computational thinking.
 
-# Succes criteria 3: Users must be able to view the review posted by other users.
+### Succes criteria 3: Users must be able to view the review posted by other users.
+The code shown below is a response to one of my success criteria which will allow users to view posts posted by other users.  
 
-The code shown below is response to one of my success criterias which will allow user to view posts posted by other users. It was quite easy to made, since the only thing that had to be done was to make a query which will display everything from table posts, in a reverse chronological order (the newest one being at the top of the page). The harder part was making a visually appealing like button, but I have found CSS template using OpenAI [^5].
+The first line ‘@app.route('/all-posts')’ assign the ‘/all-posts’ URL route to the allposts function, meaning this function will be executed when a user accesses that URL. 
+
+Firstly, class database_worker (which allows interaction with the database) connects with the ‘social_net.db’. The result is stored in variable db.
+
+Secondly, the code is executing a search query to retrieve all columns from the posts table in the database. The line ‘ORDER BY created_at DESC’ makes sure that the posts will be ordered in descending order based on the created_at column. All of that information is stored in the variable posts. 
+
+The last line is rendering ‘all-posts.html’ template using posts and users variable as context.
 
 ```.py
 @app.route('/all-posts')
@@ -278,91 +285,39 @@ def statistics():
 
 ### Success criteria 5: Users must be able to like reviews posted by other users. 
 
-Adding the like function was the most challenging task for me in the whole project. The hardest part of making that function was to make likes compatible with multiple users, meaning that the first time I have developed the function one user would remove another users like, not adding a new one. I overcome that challenge by adding this line of code which checks whether has user previously liked the post or not by checking the rows in the likes table.
+Adding the like function was the most challenging task for me in the whole project. The hardest part of making that function was to make likes compatible with multiple users, meaning that the first time I developed the function one user would remove another user's like, not adding a new one. 
+
+I overcome that challenge by adding this line of code which checks whether has user previously liked the post or not by checking the rows in the likes table. This line does that by constructing a query to retrieve all columns from the likes table in the database, filtering the results based on post_id and user_id. The query is then executed by using the search method of the database_worker class. All of that information is stored in the user_like variable.
+
 ```.py
 likes_query = f"SELECT * FROM likes WHERE post_id={post_id} AND user_id={user_id}"
 user_like = db.search(likes_query)
 ```
-This block of code will remove the like on the post if the user has already liked it by constructing a query which will delete the corresponding row from the ‘likes’ table.
+This block of code will remove the like on the post if the user has already liked it. It does this by constructing a query to delete a row from the likes table in the database. The ‘DELETE FROM’ statement removes rows filtering the results based on post_id and user_id. The query is then executed by using the run_save of the database_worker class. All of that information is stored in the user_like variable.
+
 ```.py
 if user_like:
     # If the user has already liked the post, remove their like
     delete_like_query = f"DELETE FROM likes WHERE post_id={post_id} AND user_id={user_id}"
     db.run_save(delete_like_query)
 ```
-Accordingly, this block of code will add the like on the post if the user hasn’t previously liked it by constructing a query which will add the row in the ‘likes’ table.
+
+Similarly, this block of code will add the like on the post if the user hasn’t previously liked it by constructing a query that will add the row in the ‘likes’ table.
+
 ```.py
 else:
     # If the user hasn't liked the post yet, add their like
     add_like_query = f"INSERT INTO likes(post_id, user_id) VALUES ({post_id}, {user_id})"
     db.run_save(add_like_query)
 ```
-To finish off this function will construct the query to count the numbers of likes of a specific post and another one to update the number of likes in the table.
-```.py
-likes_query = f"SELECT COUNT(*) FROM likes WHERE post_id={post_id}"
-likes_count = db.search(likes_query)[0][0]
-update_post_query = f"UPDATE posts SET likes={likes_count} WHERE id={post_id}"
-db.run_save(update_post_query)
-print(likes_count)
 
-db.close()
-```
-#### The whole like_post function:
-```.py
-@app.route('/all-posts/<int:post_id>/like', methods=['POST'])
-def like_post(post_id):
-    if request.cookies.get('user_id'):
-        user_id = int(request.cookies.get('user_id'))
-        db = database_worker("social_net.db")
-
-        # Check if the user has already liked the post
-        likes_query = f"SELECT * FROM likes WHERE post_id={post_id} AND user_id={user_id}"
-        user_like = db.search(likes_query)
-
-        if user_like:
-            # If the user has already liked the post, remove their like
-            delete_like_query = f"DELETE FROM likes WHERE post_id={post_id} AND user_id={user_id}"
-            db.run_save(delete_like_query)
-
-        else:
-            # If the user hasn't liked the post yet, add their like
-            add_like_query = f"INSERT INTO likes(post_id, user_id) VALUES ({post_id}, {user_id})"
-            db.run_save(add_like_query)
-
-        # Update the likes count for the post in the database
-        likes_query = f"SELECT COUNT(*) FROM likes WHERE post_id={post_id}"
-        likes_count = db.search(likes_query)[0][0]
-        update_post_query = f"UPDATE posts SET likes={likes_count} WHERE id={post_id}"
-        db.run_save(update_post_query)
-        print(likes_count)
-
-        db.close()
-
-        return redirect(url_for("allposts"))
-    else:
-        return redirect(url_for("login")
-```
 I have again used abstraction as I have used functions and modules to abstract away complex tasks, making the code easier to understand and reuse.
 
 ### Success criteria 6: The social network includes a top navigation bar that is visible on pages so it guides users to each page. 
 
-My 6th success criteria requires a navigation bar that is present in pages so it guides the users through the pages and make it look more organized. After noticing that the bar appeared repeatedly throughout all of the sites, I used pattern recognition and made a base template (base.html) that could be applied to and extended over all of the pages. 
-
-Because I constructed a new template that can be reused and expanded as necessary, rather than duplicating the code for the navigation bar on every page, I also used abstraction as a computational skill in this case. This strategy encourages efficiency and maintainability because any modifications made to the base template will spread to all the pages instantly. Therefore, if I need to change the structure by, for example, adding another page, there won't be a requirement for particular adjustments within each HTML file. Future developers would also find it simpler if they wanted to expand the website's page count.
+My 6th success criterion requires a navigation bar that is present on pages so it guides the users through the pages and makes them look more organized. This part of the HTML code creates a banner section with a navigation bar. The navigation bar contains links to different pages, such as creating a post, viewing statistics, accessing the user's profile, and logging out. The image with the "logo" class is also included within the navigation bar.
 
 ```.html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% if title %}
-    <title>{{ title }} </title>
-    {% else %}
-    <title>Welcome</title>
-    {% endif %}
-    <link rel="stylesheet" href = "/static/mystyle.css">
-</head>
-
 <div class="banner">
         <div class="navbar">
             <img src="/static/hellacutetransparent.png" class="logo">
@@ -374,14 +329,7 @@ Because I constructed a new template that can be reused and expanded as necessar
             </ul>
         </div>
     </div>
-<body>
-
-{% block content %} {% endblock %}
-
-</body>
-
-</html>
-```
+ ```
 
 # Criterion D: Functionality and Extensibility
 
@@ -428,6 +376,10 @@ Fig 11 shows my notes from the first interview with the client
 ![Screen Shot 2023-05-08 at 22 22 01](https://user-images.githubusercontent.com/111895127/236835335-83b651e5-a185-4bc8-9508-64fb82ec8b9f.png)
 
 Fig 12 shows my notes after interview with the client and another user after the development of social network
+
+## Appendix 3:
+![Screen Shot 2023-05-11 at 17 29 34](https://github.com/jovanovicjanna/projectunit4/assets/111895127/5be2ea79-2c2e-4cd3-9eb7-b724d411f8a1)
+Fig 14 shows notes for my video planning
 [^1]: Coursera. “What Is Python Used For? A Beginner’s Guide.” Coursera, 22 Sept. 2021, www.coursera.org/articles/what-is-python-used-for-a-beginners-guide-to-using-python.
 
 [^2]: “Python vs C++: What’s the Difference?” Www.guru99.com, www.guru99.com/python-vs-c-plus-plus.html.
