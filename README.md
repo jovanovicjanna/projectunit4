@@ -41,7 +41,7 @@ I will design and make a social network for a client who is a student at a local
 6. The social network includes a top navigation bar that is visible on pages so it guides users to each page. *[issue tackled = Currently, she is exploring her area of interest through various social media apps but the information is too disorganized as it does not guide viewers to each page]*
 # Criterion B: Design Overview
 ## System diagram
-![unit4_systemdiagram (1)](https://github.com/jovanovicjanna/projectunit4/assets/111895127/98d20eed-5459-4a09-821d-61639c3a6480)
+![](unit4_systemdiagram.png)
 
 Fig 2 shows the system diagram for the Hellacute network which is a visual representation of the system, its parts, and how they relate to one another. 
 
