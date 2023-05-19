@@ -89,7 +89,7 @@ Fig 9 shows the example of the data stored in the "posts" table in the "social_n
 Fig 10 shows the example of the data stored in the "likes" table in the "social_net" database
 
 ## UML diagram
-![Blank diagram - Page 1](https://github.com/jovanovicjanna/projectunit4/assets/111895127/3ceb8802-2724-4695-bf40-1e2636e96372)
+![](UML_diagram.png)
 
 Fig 11 shows the UML diagram for the class database_worker which I have used to connect to the database
 
