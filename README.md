@@ -62,7 +62,7 @@ Fig 5 shows the flow diagram for the post_review function
 This ‘post_review’ function allows the user who is logged in to make a post by entering properties such as title, rating, and content. The user must fill out all the fields or else an error message will be displayed. Posts will be displayed in reverse chronological order (the newest one being at the top of the page).
 
 ## Wireframe diagram
-![unit4wireframe_diagram (1)](https://github.com/jovanovicjanna/projectunit4/assets/111895127/dd39007e-08bf-4d0c-bc4d-2efbee2204b9)
+![](unit4wireframe_diagram%20(1).png)
 
 Fig 6 shows the wireframe diagram for the Hellacute network
 
