@@ -385,7 +385,8 @@ Fig 12 shows my notes from the first interview with the client
 Fig 13 shows my notes after interview with the client and another user after the development of social network
 
 ## Appendix 3:
-![Screen Shot 2023-05-11 at 17 29 34](https://github.com/jovanovicjanna/projectunit4/assets/111895127/5be2ea79-2c2e-4cd3-9eb7-b724d411f8a1)
+![Screen Shot 2023-05-19 at 9 54 09](https://github.com/jovanovicjanna/projectunit4/assets/111895127/4d3236eb-6b08-4e68-866f-46194a19af89)
+
 
 Fig 15 shows notes for my video planning
 
