@@ -69,7 +69,7 @@ Fig 6 shows the wireframe diagram for the Hellacute network
 This wireframe diagram's objective is to provide a visual representation of the user interface design that outlines the structure and layout of the social network. The wireframe also shows how various screens will be accessed via various buttons. The user can see which screen will open when they press and release the button according to the arrows that extend from the button to the screen.
 
 ## ER diagram
-![unit4_erdiagram](https://user-images.githubusercontent.com/111895127/236603554-a630ea69-0334-4f8d-bfdf-9f51f76515b2.png)
+![](unit4_erdiagram.png)
 Fig 7 shows the ER diagram for the database that the client requires
 
 This is the ER diagram for the database illustrating the relationship between the “users”, “posts” and “likes” table from the “social_net” database. In the “users” table, there are 5 different columns including id, username email, password, and bio. Each column will have the specific data type after the column name. The second table “posts” has 7 columns which are id, title, rate, content, likes, created_at, and user_id. The third table “likes” has 3 columns id, post_id, and user_id. This diagram also shows that one user can have multiple posts which can have multiple likes.
